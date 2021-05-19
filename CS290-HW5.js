@@ -18,18 +18,27 @@ app.get('/',function(req,res){
   }
   var context = {};
   context.reqType = 'GET';
-  context.dataList = qParams;
+  context.queryList = qParams;
   res.render('home', context);
 });
 
 app.post('/', function(req,res){
-  var qParams = [];
-  for (var p in req.body){
-    qParams.push({'name':p,'value':req.body[p]})
+  var bParams = [];
+  for (var b in req.body){
+    bParams.push({'name':b,'value':req.body[b]})
   }
   var context = {};
   context.reqType = 'POST';
-  context.dataList = qParams;
+  context.bodyList = bParams;
+  
+  var qParams = [];
+  for (var p in req.query){
+    qParams.push({'name':p,'value':req.query[p]})
+  }
+  var context = {};
+  context.reqType = 'POST';
+  context.queryList = qParams;
+  
   res.render('home', context);
 });
 
