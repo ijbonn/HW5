@@ -27,7 +27,7 @@ app.post('/', function(req,res){
   for (var b in req.body){
     bParams.push({'name':b,'value':req.body[b]})
   }
-  var context = {};
+  var bcontext = {};
   context.reqType = 'POST';
   context.bodyList = bParams;
   
@@ -35,8 +35,6 @@ app.post('/', function(req,res){
   for (var p in req.query){
     qParams.push({'name':p,'value':req.query[p]})
   }
-  var context = {};
-  context.reqType = 'POST';
   context.queryList = qParams;
   
   res.render('home', context);
