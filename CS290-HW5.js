@@ -27,7 +27,7 @@ app.post('/', function(req,res){
   for (var b in req.body){
     bParams.push({'name':b,'value':req.body[b]})
   }
-  var bcontext = {};
+  var context = {};
   context.reqType = 'POST';
   context.bodyList = bParams;
   
