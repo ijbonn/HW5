@@ -1,4 +1,19 @@
 <h1>{{reqType}} Request Received:</h1>
+<h2>Parameters recieved in URL query:</h2>
+<table border = 'solid'>
+  <tr>
+    <th>Parameter</th>
+    <th>Value</th>
+  </tr>
+  {{#each dataList}}
+    <tr>
+      <td>{{this.name}} </td>
+      <td>{{this.value}} </td>
+    </tr>
+  {{/each}}
+</table>
+<br>
+<h2>Parameters recieved in body</h2>
 <table border = 'solid'>
   <tr>
     <th>Parameter</th>
